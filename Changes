@@ -2,6 +2,8 @@ Revision history for Dist-Zilla-Plugin-MakeMaker-Highlander
 
 {{$NEXT}}
 
+0.002     2013-09-23 05:58:30 America/New_York
+
     [FIXED]
 
     - Suppressed warnings if PERL_MM_OPT is not set
