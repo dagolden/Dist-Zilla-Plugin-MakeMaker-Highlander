@@ -20,8 +20,8 @@ sub setup_installer {
 
     my $insert = <<'HERE';
 if ( $] < 5.012
-    && $ENV{PERL_MM_OPT} !~ /(?:INSTALL_BASE|PREFIX)/
-    && ! grep { /INSTALL_BASE/ || /PREFIX/ } @ARGV
+  && ! ( $ENV{PERL_MM_OPT} && $ENV{PERL_MM_OPT} =~ /(?:INSTALL_BASE|PREFIX)/ )
+  && ! grep { /INSTALL_BASE/ || /PREFIX/ } @ARGV
 ) {
     $WriteMakefileArgs{UNINST} = 1;
 }
