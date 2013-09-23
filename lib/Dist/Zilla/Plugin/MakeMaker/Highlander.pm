@@ -19,7 +19,9 @@ sub setup_installer {
       or $self->log_fatal('No Makefile.PL found. Using [MakeMaker] is required');
 
     my $insert = <<'HERE';
+# Added by Dist::Zilla::Plugin::MakeMaker::Highlander
 if ( $] < 5.012
+  && ! $ENV{PERL_NO_HIGHLANDER}
   && ! ( $ENV{PERL_MM_OPT} && $ENV{PERL_MM_OPT} =~ /(?:INSTALL_BASE|PREFIX)/ )
   && ! grep { /INSTALL_BASE/ || /PREFIX/ } @ARGV
 ) {
@@ -60,6 +62,10 @@ C<INSTALL_BASE> or C<PREFIX>.
 
 This will result in warnings from old ExtUtils::MakeMaker, but appears to
 work nonetheless.
+
+If a build system already accounts for ExtUtils::MakeMaker's pathological
+bundling and C<UNINST = 1> causes problems, the C<PERL_NO_HIGHLANDER>
+environment variable may be set to a true value.
 
 =cut
 
