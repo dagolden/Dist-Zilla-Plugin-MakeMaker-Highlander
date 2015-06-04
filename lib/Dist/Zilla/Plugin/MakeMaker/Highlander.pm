@@ -7,7 +7,7 @@ package Dist::Zilla::Plugin::MakeMaker::Highlander;
 # VERSION
 
 use Moose 2;
-use List::AllUtils 'first';
+use List::Util 1.33 'first';
 use namespace::autoclean;
 
 with 'Dist::Zilla::Role::InstallTool';
