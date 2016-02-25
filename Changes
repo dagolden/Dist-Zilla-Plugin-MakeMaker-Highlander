@@ -2,6 +2,8 @@ Revision history for Dist-Zilla-Plugin-MakeMaker-Highlander
 
 {{$NEXT}}
 
+0.004     2016-02-25 16:52:05-05:00 America/New_York
+
     [CHANGED]
 
     - Relies on List::Util 1.33 instead of List::AllUtils
