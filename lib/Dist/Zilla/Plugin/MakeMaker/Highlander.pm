@@ -4,7 +4,8 @@ use warnings;
 
 package Dist::Zilla::Plugin::MakeMaker::Highlander;
 # ABSTRACT: There can be only one
-# VERSION
+
+our $VERSION = "0.004";
 
 use Moose 2;
 use List::Util 1.33 'first';
